@@ -1,0 +1,103 @@
+﻿@model IEnumerable<DevExtremeMvcApp1.Models.Arac>
+
+@{
+    ViewBag.Title = "Araçlarım";
+}
+
+    <h2>Araçlarım</h2>
+
+<p>
+    @Html.ActionLink("Araç Kayıt", "Register")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Marka)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Model)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MotorTipi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Plaka)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RuhsatSahibiAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RuhsatSahibiSoyadi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.yil)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.km)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TicariBinek)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YakitTürü)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SurusTipi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bakimservisi)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Marka)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Model)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MotorTipi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Plaka)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RuhsatSahibiAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RuhsatSahibiSoyadi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.yil)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.km)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TicariBinek)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YakitTürü)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SurusTipi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bakimservisi)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.AracID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.AracID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.AracID })
+            @using (Html.BeginForm("BakimTalepEkrani", "BakimTalep", item, FormMethod.Post))
+            {
+                <input type="submit" value="Bakım Talep Et" />
+            }
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,114 @@
+﻿@model DevExtremeMvcApp1.Models.Arac
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Arac</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Marka)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Marka)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Model)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MotorTipi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MotorTipi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Plaka)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Plaka)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RuhsatSahibiAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RuhsatSahibiAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RuhsatSahibiSoyadi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RuhsatSahibiSoyadi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.yil)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.yil)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.km)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.km)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TicariBinek)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TicariBinek)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YakitTürü)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YakitTürü)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SurusTipi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SurusTipi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bakimservisi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bakimservisi)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AracID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

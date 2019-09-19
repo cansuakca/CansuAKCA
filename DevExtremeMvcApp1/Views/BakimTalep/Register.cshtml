@@ -1,0 +1,58 @@
+﻿@model DevExtremeMvcApp1.Models.BakimTalep
+
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>Register</h2>
+
+<h3>Bakım Talebinde bulunulan araç.</h3>
+@{
+    var bakimTalep = (DevExtremeMvcApp1.Models.BakimTalep)TempData["BakimTalep"];
+    if (bakimTalep != null)
+    {
+        <h3>Marka: @bakimTalep.Arac.Marka</h3>
+        <h3>Model: @bakimTalep.Arac.Model</h3>
+        <h3>Km: @bakimTalep.Arac.km</h3>
+        <h3>Plaka: @bakimTalep.Arac.Plaka</h3>
+        TempData["Arac"] = bakimTalep.Arac;
+    }
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>BakimTalep</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+<div class="form-group">
+    <p>Talep Tarihi</p>
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.TalepTarihi, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.TalepTarihi, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="form-group">
+    <p>Talep Detay</p>
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.TalepDetay, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.TalepDetay, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Talep Oluştur" class="btn btn-primary" />
+        </div>
+    </div>
+</div>
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

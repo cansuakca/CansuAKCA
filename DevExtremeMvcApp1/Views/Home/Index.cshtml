@@ -1,0 +1,25 @@
+@using DevExtremeMvcApp1.Models
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Home  </h2>
+
+@(Html.DevExtreme().DataGrid<Arac>()
+    .ShowBorders(true)
+    .DataSource(d => d.WebApi().Controller("AracAccount").Key("AracID"))
+    .Columns(columns => {
+        columns.AddFor(m => m.AracID);
+        columns.AddFor(m => m.Marka);
+        columns.AddFor(m => m.Model);
+        columns.AddFor(m => m.km);
+        columns.AddFor(m => m.Plaka);
+    })
+    .Paging(p => p.PageSize(10))
+    .FilterRow(f => f.Visible(true))
+    .HeaderFilter(f => f.Visible(true))
+    .GroupPanel(p => p.Visible(true))
+    .Grouping(g => g.AutoExpandAll(false))
+    .RemoteOperations(true)
+)

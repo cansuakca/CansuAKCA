@@ -1,0 +1,130 @@
+﻿@model DevExtremeMvcApp1.Models.Arac
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Arac</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.AracID)
+
+    <div class="form-group">
+        <p>Marka</p>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Marka, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Marka, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <p>Model</p>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Model, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Model, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <p>Model Tipi</p>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.MotorTipi, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.MotorTipi, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <p>Plaka</p>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Plaka, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Plaka, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <p>Ruhsat Sahibi Adı</p>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.RuhsatSahibiAdi, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.RuhsatSahibiAdi, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <p>Ruhsat Sahibi Soyadı</p>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.RuhsatSahibiSoyadi, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.RuhsatSahibiSoyadi, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <p>Yıl</p>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.yil, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.yil, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <p>Km</p>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.km, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.km, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <p>Ticari Binek</p>
+        <div class="col-md-10">
+            @Html.EnumDropDownListFor(model => model.TicariBinek, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.TicariBinek, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <p>Yakıt Türü</p>
+        <div class="col-md-10">
+            @Html.EnumDropDownListFor(model => model.YakitTürü, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.YakitTürü, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <p>Sürüş Tipi</p>
+        <div class="col-md-10">
+            @Html.EnumDropDownListFor(model => model.SurusTipi, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.SurusTipi, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <p>Bakım Servisi</p>
+        <div class="col-md-10">
+            @Html.EnumDropDownListFor(model => model.Bakimservisi, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Bakimservisi, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

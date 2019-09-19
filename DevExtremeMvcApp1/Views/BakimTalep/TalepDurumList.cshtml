@@ -1,0 +1,52 @@
+﻿@model IEnumerable<DevExtremeMvcApp1.Models.BakimTalep>
+
+@{
+    ViewBag.Title = "Talep Durum";
+}
+
+    <h2>Talep Durum</h2>
+
+<p>
+    @Html.ActionLink("Yeni Talep Oluştur", "", "AracAccount")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Arac.Marka)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserAccount.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TalepTarihi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TalepDetay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TalepDurum)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Arac.Marka)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserAccount.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TalepTarihi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TalepDetay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TalepDurum)
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,64 @@
+﻿@model DevExtremeMvcApp1.Models.BakimTalep
+
+@{
+    ViewBag.Title = "Detay";
+}
+
+<h2>Detay</h2>
+
+<div>
+    <h4>BakimTalep</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TalepTarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TalepTarihi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserAccount.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserAccount.FirstName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UserAccount.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserAccount.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserAccount.CepTelefon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserAccount.CepTelefon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TalepDetay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TalepDetay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TalepDurum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TalepDurum)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Listeye Dön", "BakimTalepList")
+</p>

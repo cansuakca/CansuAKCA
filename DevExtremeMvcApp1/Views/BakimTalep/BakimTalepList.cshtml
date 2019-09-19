@@ -1,0 +1,76 @@
+﻿@model IEnumerable<DevExtremeMvcApp1.Models.BakimTalep>
+
+@{
+    ViewBag.Title = "Bakım Talep Listesi";
+}
+
+    <h2>Bakım Talep Listesi</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Arac.Marka)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Arac.Model)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TalepTarihi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TalepDetay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserAccount.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TalepDurum)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Arac.Marka)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Arac.Model)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TalepTarihi)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TalepDetay)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.UserAccount.FirstName)
+    </td>
+    <td>
+        @{ if (item.TalepDurum == true)
+            {
+                <p><b>Onaylandı</b></p>
+            }
+            else if (item.TalepDurum == false)
+            {
+                <p><b>Beklemede</b></p>
+            }
+        }
+    </td>
+    <td>
+        @{
+            if (item.TalepDurum == false)
+            {
+                using (Html.BeginForm("Onayla", "BakimTalep", item, FormMethod.Post))
+                {
+                    <input type="submit" value="Onayla |" />
+                }
+            }
+        }
+        @Html.ActionLink("Detay", "Detay", new { id = item.TalepID })
+    </td>
+</tr>
+}
+
+</table>
